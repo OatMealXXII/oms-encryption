@@ -9,7 +9,6 @@ void processBuffer(char* data, char key, size_t len) {
     }
 }
 
-// ฟังก์ชันสำหรับเลือกไฟล์ผ่าน Windows Dialog
 BOOL selectFile(char* filePath, DWORD flags, BOOL saveDialog) {
     OPENFILENAME ofn;
     ZeroMemory(&ofn, sizeof(ofn));
@@ -30,15 +29,15 @@ BOOL selectFile(char* filePath, DWORD flags, BOOL saveDialog) {
 }
 
 int main() {
-    char key = 0x5A;
+    char key = 0x7B;
     int choice;
 
     printf("Choose mode:\n");
-    printf("1. Encode (เข้ารหัส)\n");
-    printf("2. Decode (ถอดรหัส)\n");
+    printf("1. Encode\n");
+    printf("2. Decode\n");
     printf("Enter choice (1/2): ");
     scanf("%d", &choice);
-    getchar(); // clear newline
+    getchar();
 
     if (choice != 1 && choice != 2) {
         printf("Invalid choice.\n");
